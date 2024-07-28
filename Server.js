@@ -2,7 +2,7 @@ import cron from "node-cron";
 import db from "./Database.js";
 import express from "express";
 import  TelegramBot from "node-telegram-bot-api";
-
+import dotenv from 'dotenv';
 import { Worker } from 'worker_threads';
 
 // process.on('uncaughtException', err => {
@@ -13,7 +13,7 @@ import { Worker } from 'worker_threads';
 
 
 
-
+dotenv.config();
 
 const {  telegramBotToken, nameDomain } = process.env,
 worker = new Worker('./worker.js'),
